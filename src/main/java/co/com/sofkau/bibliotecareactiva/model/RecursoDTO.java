@@ -14,15 +14,15 @@ import java.time.LocalDate;
 public final class RecursoDTO {
 
     private String id;
-    @NotBlank(message = "El nombre no debe estar vacio")
+    //@NotBlank(message = "El nombre no debe estar vacio")
     private String nombre;
     private LocalDate fecha;
-    @NotNull(message = "Debe ingresar una cantidad")
+    //@NotNull(message = "Debe ingresar una cantidad")
     private Integer cantidadDisponible;
     private Integer cantidadPrestada;
-    @NotBlank(message = "Ingrese un tipo de recurso")
+    //@NotBlank(message = "Ingrese un tipo de recurso")
     private String  tipo;
-    @NotBlank(message = "Ingrese una una tematica del recurso")
+    //@NotBlank(message = "Ingrese una una tematica del recurso")
     private String  tematica;
 
 }

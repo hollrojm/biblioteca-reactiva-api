@@ -21,6 +21,6 @@ public  class RecomendarPorTipoUseCase implements RecomendarPorTipo {
 
     @Override
     public Flux<RecursoDTO> get(String tipo) {
-        return recursoRepository.findByTipo(tipo).map(mapperUtils.mapEntidadToRecurso());
+        return recursoRepository.findAllByTipo(tipo).map(mapperUtils.mapEntidadToRecurso());
     }
 }

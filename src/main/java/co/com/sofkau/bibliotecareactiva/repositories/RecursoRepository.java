@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 
 @Repository
 public interface RecursoRepository extends ReactiveCrudRepository<Recurso, String> {
-    Flux<Recurso> findByTipo(String tipo);
-    Flux<Recurso> findByTematica( String tematica);
-    Flux<Recurso> findByTipoyTematica(String tipo,  String tematica);
+    Flux<Recurso> findAllByTipo(String tipo);
+    Flux<Recurso> findAllByTematica(String tematica);
+    Flux<Recurso> findAllByTipoAndTematica(String tipo, String tematica);
 }

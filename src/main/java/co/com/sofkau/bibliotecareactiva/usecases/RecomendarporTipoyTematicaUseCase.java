@@ -25,7 +25,7 @@ public  class RecomendarporTipoyTematicaUseCase implements RecomendarPorTipoyTem
     public Flux<RecursoDTO> get(String tipo, String tematica) {
         Objects.requireNonNull(tipo, "Debe ingresar el tipo del recurso");
         Objects.requireNonNull(tematica,"Debe ingresar la tematica del recurso");
-        return recursoRepository.findByTipoyTematica(tipo, tematica)
+        return recursoRepository.findAllByTipoAndTematica(tipo, tematica)
                 .map(mapperUtils.mapEntidadToRecurso())
                 .distinct();
     }
