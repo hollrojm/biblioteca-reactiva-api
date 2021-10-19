@@ -1,4 +1,4 @@
-package co.com.sofkau.bibliotecareactiva.usecases;
+package co.com.sofkau.bibliotecareactiva.mapper;
 
 import co.com.sofkau.bibliotecareactiva.collections.Recurso;
 import co.com.sofkau.bibliotecareactiva.model.RecursoDTO;

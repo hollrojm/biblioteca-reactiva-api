@@ -1,6 +1,7 @@
 package co.com.sofkau.bibliotecareactiva.usecases;
 
 import co.com.sofkau.bibliotecareactiva.collections.Recurso;
+import co.com.sofkau.bibliotecareactiva.mapper.MapperUtils;
 import co.com.sofkau.bibliotecareactiva.repositories.RecursoRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,6 @@ import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 
 class ListarRecursoUseCaseTest {

@@ -28,18 +28,7 @@ public  class RecursoRouters {
         );
     }
 
-    @Bean
-    public RouterFunction<ServerResponse> save(GuardarRecursoUseCase agregarRecursoUseCase) {
-        Function<RecursoDTO, Mono<ServerResponse>> executor = recursoDTO -> agregarRecursoUseCase.apply(recursoDTO)
-                .flatMap(result -> ServerResponse.ok()
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .bodyValue(result));
 
-        return route(
-                POST("/recursos/agregar").and(accept(MediaType.APPLICATION_JSON)),
-                request -> request.bodyToMono(RecursoDTO.class).flatMap(executor)
-        );
-    }
 
     @Bean
     public RouterFunction<ServerResponse> update(ModificarRecursoUseCase modificarRecursoUseCase) {

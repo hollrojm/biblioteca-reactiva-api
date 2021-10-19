@@ -1,5 +1,6 @@
 package co.com.sofkau.bibliotecareactiva.usecases;
 
+import co.com.sofkau.bibliotecareactiva.mapper.MapperUtils;
 import co.com.sofkau.bibliotecareactiva.repositories.RecursoRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
