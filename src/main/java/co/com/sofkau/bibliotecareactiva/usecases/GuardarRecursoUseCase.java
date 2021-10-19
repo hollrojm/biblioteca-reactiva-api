@@ -24,7 +24,6 @@ public  class GuardarRecursoUseCase implements GuardarRecurso {
 
     @Override
     public Mono<RecursoDTO> apply(RecursoDTO recursoDTO) {
-        Objects.requireNonNull(recursoDTO.getId(), "Id de recurso es requerido");
         return recursoRepository
                 .save(mapperUtils.mapperToRecurso().apply(recursoDTO))
                 .map(recurso -> mapperUtils.mapEntidadToRecurso().apply(recurso));

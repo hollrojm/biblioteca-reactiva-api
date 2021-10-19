@@ -22,6 +22,6 @@ public class ListarRecursoUseCase implements Supplier<Flux<RecursoDTO>> {
 
     @Override
     public Flux<RecursoDTO> get() {
-        return recursoRepository.findAll().map(mapperUtils.mapEntidadToRecurso());
+        return recursoRepository.findAll().map(recurso -> mapperUtils.mapEntidadToRecurso().apply(recurso));
     }
 }
