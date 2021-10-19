@@ -2,6 +2,7 @@ package co.com.sofkau.bibliotecareactiva.usecases;
 
 import co.com.sofkau.bibliotecareactiva.model.RecursoDTO;
 import co.com.sofkau.bibliotecareactiva.repositories.RecursoRepository;
+import co.com.sofkau.bibliotecareactiva.usecases.interfacesusecase.GuardarRecurso;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;

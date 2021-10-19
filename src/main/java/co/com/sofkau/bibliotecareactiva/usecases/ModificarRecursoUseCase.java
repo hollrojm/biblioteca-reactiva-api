@@ -2,6 +2,7 @@ package co.com.sofkau.bibliotecareactiva.usecases;
 
 import co.com.sofkau.bibliotecareactiva.model.RecursoDTO;
 import co.com.sofkau.bibliotecareactiva.repositories.RecursoRepository;
+import co.com.sofkau.bibliotecareactiva.usecases.interfacesusecase.GuardarRecurso;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
@@ -10,7 +11,7 @@ import java.util.Objects;
 
 @Service
 @Validated
-public final class ModificarRecursoUseCase implements GuardarRecurso{
+public final class ModificarRecursoUseCase implements GuardarRecurso {
     private final RecursoRepository recursoRepository;
     private final MapperUtils mapperUtils;
 

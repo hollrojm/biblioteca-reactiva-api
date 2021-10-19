@@ -1,4 +1,4 @@
-package co.com.sofkau.bibliotecareactiva.usecases;
+package co.com.sofkau.bibliotecareactiva.usecases.interfacesusecase;
 
 import co.com.sofkau.bibliotecareactiva.model.RecursoDTO;
 import reactor.core.publisher.Mono;
