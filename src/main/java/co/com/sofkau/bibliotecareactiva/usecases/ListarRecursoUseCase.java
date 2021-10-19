@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 
 import java.util.function.Supplier;
 
-public final class ListarRecursoUseCase implements Supplier<Flux<RecursoDTO>> {
+public class ListarRecursoUseCase implements Supplier<Flux<RecursoDTO>> {
 
     private final RecursoRepository recursoRepository;
     private final MapperUtils mapperUtils;
