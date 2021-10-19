@@ -9,21 +9,22 @@ import reactor.core.publisher.Mono;
 
 import java.util.Objects;
 
+
 @Service
 @Validated
-public final class AgregarRecursoUseCase implements GuardarRecurso {
+public  class GuardarRecursoUseCase implements GuardarRecurso {
 
     private final RecursoRepository recursoRepository;
     private final MapperUtils mapperUtils;
 
-    public AgregarRecursoUseCase(RecursoRepository recursoRepository, MapperUtils mapperUtils) {
+    public GuardarRecursoUseCase(RecursoRepository recursoRepository, MapperUtils mapperUtils) {
         this.recursoRepository = recursoRepository;
         this.mapperUtils = mapperUtils;
     }
 
     @Override
     public Mono<RecursoDTO> apply(RecursoDTO recursoDTO) {
-        Objects.requireNonNull(recursoDTO.getId(), "Id del recurso es requerido");
+        Objects.requireNonNull(recursoDTO.getId(), "Id de recurso es requerido");
         return recursoRepository
                 .save(mapperUtils.mapperToRecurso().apply(recursoDTO))
                 .map(recurso -> mapperUtils.mapEntidadToRecurso().apply(recurso));

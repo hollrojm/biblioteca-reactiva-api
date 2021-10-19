@@ -1,12 +1,16 @@
 package co.com.sofkau.bibliotecareactiva.usecases;
 
 import co.com.sofkau.bibliotecareactiva.repositories.RecursoRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
 import java.util.Objects;
 import java.util.function.Function;
 
-public final class VerificarDisponibilidadUseCase  implements Function<String, Mono<String>> {
+@Service
+@Validated
+public  class VerificarDisponibilidadUseCase  implements Function<String, Mono<String>> {
 
     private final RecursoRepository recursoRepository;
 

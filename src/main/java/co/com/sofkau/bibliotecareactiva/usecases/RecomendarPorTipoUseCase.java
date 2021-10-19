@@ -3,9 +3,13 @@ package co.com.sofkau.bibliotecareactiva.usecases;
 import co.com.sofkau.bibliotecareactiva.model.RecursoDTO;
 import co.com.sofkau.bibliotecareactiva.repositories.RecursoRepository;
 import co.com.sofkau.bibliotecareactiva.usecases.interfacesusecase.RecomendarPorTipo;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Flux;
 
-public final class RecomendarPorTipoUseCase implements RecomendarPorTipo {
+@Service
+@Validated
+public  class RecomendarPorTipoUseCase implements RecomendarPorTipo {
 
     private final RecursoRepository recursoRepository;
     private final MapperUtils mapperUtils;
@@ -17,6 +21,6 @@ public final class RecomendarPorTipoUseCase implements RecomendarPorTipo {
 
     @Override
     public Flux<RecursoDTO> get(String tipo) {
-        return recursoRepository.encontrarPorTipo(tipo).map(mapperUtils.mapEntidadToRecurso());
+        return recursoRepository.findByTipo(tipo).map(mapperUtils.mapEntidadToRecurso());
     }
 }

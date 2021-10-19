@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Service
 @Validated
-public final class RecomendarporTipoyTematicaUseCase implements RecomendarPorTipoyTematica {
+public  class RecomendarporTipoyTematicaUseCase implements RecomendarPorTipoyTematica {
     private final RecursoRepository recursoRepository;
     private final MapperUtils mapperUtils;
 
@@ -25,7 +25,7 @@ public final class RecomendarporTipoyTematicaUseCase implements RecomendarPorTip
     public Flux<RecursoDTO> get(String tipo, String tematica) {
         Objects.requireNonNull(tipo, "Debe ingresar el tipo del recurso");
         Objects.requireNonNull(tematica,"Debe ingresar la tematica del recurso");
-        return recursoRepository.encontrarPorTipoyTematica(tipo, tematica)
+        return recursoRepository.findByTipoyTematica(tipo, tematica)
                 .map(mapperUtils.mapEntidadToRecurso())
                 .distinct();
     }

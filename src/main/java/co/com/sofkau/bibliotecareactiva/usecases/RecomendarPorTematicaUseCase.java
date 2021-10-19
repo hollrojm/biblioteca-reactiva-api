@@ -3,9 +3,13 @@ package co.com.sofkau.bibliotecareactiva.usecases;
 import co.com.sofkau.bibliotecareactiva.model.RecursoDTO;
 import co.com.sofkau.bibliotecareactiva.repositories.RecursoRepository;
 import co.com.sofkau.bibliotecareactiva.usecases.interfacesusecase.RecomendarPorTematica;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Flux;
 
-public final class RecomendarPorTematicaUseCase implements RecomendarPorTematica {
+@Service
+@Validated
+public  class RecomendarPorTematicaUseCase implements RecomendarPorTematica {
 
     private final RecursoRepository recursoRepository;
     private final MapperUtils mapperUtils;
@@ -18,6 +22,6 @@ public final class RecomendarPorTematicaUseCase implements RecomendarPorTematica
 
     @Override
     public Flux<RecursoDTO> get(String tematica) {
-        return recursoRepository.encontrarPorTematica(tematica).map(mapperUtils.mapEntidadToRecurso());
+        return recursoRepository.findByTematica(tematica).map(mapperUtils.mapEntidadToRecurso());
     }
 }

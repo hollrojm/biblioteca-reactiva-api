@@ -17,7 +17,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public final class RecursoRouters {
+public  class RecursoRouters {
     @Bean
     public RouterFunction<ServerResponse> getAll(ListarRecursoUseCase listarRecursoUseCase) {
         return route(GET("/recursos"),
@@ -29,7 +29,7 @@ public final class RecursoRouters {
     }
 
     @Bean
-    public RouterFunction<ServerResponse> save(AgregarRecursoUseCase agregarRecursoUseCase) {
+    public RouterFunction<ServerResponse> save(GuardarRecursoUseCase agregarRecursoUseCase) {
         Function<RecursoDTO, Mono<ServerResponse>> executor = recursoDTO -> agregarRecursoUseCase.apply(recursoDTO)
                 .flatMap(result -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
@@ -57,7 +57,7 @@ public final class RecursoRouters {
     }
 
     @Bean
-    public RouterFunction<ServerResponse> delete(EliminarRecursoUseCase eliminarRecursoUseCase) {
+    public RouterFunction<ServerResponse> delete(EliminaRecursoUseCase eliminarRecursoUseCase) {
         return route(
                 DELETE("/recursos/eliminar/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.accepted()

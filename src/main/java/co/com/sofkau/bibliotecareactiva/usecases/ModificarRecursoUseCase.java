@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Service
 @Validated
-public final class ModificarRecursoUseCase implements GuardarRecurso {
+public  class ModificarRecursoUseCase implements GuardarRecurso {
     private final RecursoRepository recursoRepository;
     private final MapperUtils mapperUtils;
 

@@ -7,17 +7,17 @@ import org.springframework.stereotype.Component;
 import java.util.function.Function;
 
 @Component
-public final class MapperUtils {
+public  class MapperUtils {
     public Function<RecursoDTO, Recurso> mapperToRecurso() {
-        return updateRecurso -> {
+        return modificarRecurso -> {
             var recurso = new Recurso();
-            recurso.setId(updateRecurso.getId());
-            recurso.setNombre(updateRecurso.getNombre());
-            recurso.setFecha(updateRecurso.getFecha());
-            recurso.setCantidadDisponible(updateRecurso.getCantidadDisponible());
-            recurso.setCantidadPrestada(updateRecurso.getCantidadPrestada());
-            recurso.setTipo(updateRecurso.getTipo());
-            recurso.setTematica(updateRecurso.getTematica());
+            recurso.setId(modificarRecurso.getId());
+            recurso.setNombre(modificarRecurso.getNombre());
+            recurso.setFecha(modificarRecurso.getFecha());
+            recurso.setCantidadDisponible(modificarRecurso.getCantidadDisponible());
+            recurso.setCantidadPrestada(modificarRecurso.getCantidadPrestada());
+            recurso.setTipo(modificarRecurso.getTipo());
+            recurso.setTematica(modificarRecurso.getTematica());
             return recurso;
         };
     }
