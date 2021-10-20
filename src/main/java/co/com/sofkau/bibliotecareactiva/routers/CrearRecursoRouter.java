@@ -26,7 +26,7 @@ public class CrearRecursoRouter {
                         .bodyValue(result));
 
         return route(
-                POST("/add").and(accept(MediaType.APPLICATION_JSON)),
+                POST("/agregar").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(RecursoDTO.class).flatMap(executor)
         );
     }

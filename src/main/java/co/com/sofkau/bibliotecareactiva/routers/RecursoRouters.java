@@ -45,15 +45,7 @@ public  class RecursoRouters {
         );
     }
 
-    @Bean
-    public RouterFunction<ServerResponse> delete(EliminaRecursoUseCase eliminarRecursoUseCase) {
-        return route(
-                DELETE("/recursos/eliminar/{id}").and(accept(MediaType.APPLICATION_JSON)),
-                request -> ServerResponse.accepted()
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromPublisher(eliminarRecursoUseCase.apply(request.pathVariable("id")), Void.class))
-        );
-    }
+
 
     @Bean
     public RouterFunction<ServerResponse> disponibilidad(VerificarDisponibilidadUseCase verificarDisponibilidadUseCase) {
